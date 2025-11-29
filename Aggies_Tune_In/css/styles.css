@@ -1,11 +1,9 @@
 /* ====================================================
    Team Members: 
-   1. Travon Clark 
-   2. Verenice Del Valle-Prudente 
-   3. Ruth Opoku 
-   4. Iasia Williams 
+   Travon Clark, Verenice Del Valle-Prudente,
+   Ruth Opoku, Iasia Williams
+   File Name: styles.css
    Date: 11/04/2025
-   File Name: style.css
    ==================================================== */
 
 /* ====================================================
@@ -30,107 +28,160 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Remove bullets */
-ol, ul {
+ul, ol {
     list-style: none;
 }
 
-/* Link defaults */
 a {
     text-decoration: none;
     color: #0056b3;
     transition: color 0.3s ease;
 }
 
-a:hover,
-a:focus {
+a:hover {
     color: #002d64;
 }
 
-/* Ensure HTML5 elements render correctly */
-article, aside, figcaption, figure,
-footer, header, nav, section {
+article, aside, figcaption, figure, footer, header, nav, section {
     display: block;
 }
 
 /* ====================================================
-   HEADER STYLES
+   HEADER + NAVIGATION
    ==================================================== */
 header {
     background-color: #003366;
-    color: #ffffff;
+    color: white;
     padding: 20px;
     text-align: center;
 }
 
-header h1 {
-    font-size: 2.5em;
-}
-
-/* ====================================================
-   NAVIGATION STYLES
-   ==================================================== */
 nav {
     background-color: #0056b3;
-    display: flex;
-    justify-content: center;
-    padding: 10px 0;
+    padding: 15px;
 }
 
-nav ul {
+nav .logo h1 {
+    color: white;
+    font-size: 1.8rem;
+}
+
+nav .logo p {
+    color: #dce7f7;
+    font-size: 0.9rem;
+}
+
+nav .nav-links {
     display: flex;
     gap: 25px;
+    justify-content: center;
+    margin-top: 10px;
 }
 
-nav a {
-    color: #ffffff;
+nav .nav-links a {
+    color: white;
     font-weight: 600;
-    padding: 10px 15px;
+    padding: 8px 12px;
     border-radius: 4px;
-    transition: background-color 0.3s ease;
 }
 
-nav a:hover {
+nav .nav-links a:hover {
     background-color: #003366;
 }
 
 /* ====================================================
-   MAIN CONTENT STYLES
+   MAIN CONTENT
    ==================================================== */
 main {
     padding: 20px;
-    background-color: #ffffff;
+    background: white;
 }
 
-h2 {
+h1, h2, h3 {
     color: #003366;
-    margin: 15px 0;
-    font-size: 1.75em;
+    margin-bottom: 10px;
 }
 
 .highlight {
     background-color: #ffeb3b;
-    font-weight: bold;
     padding: 5px;
+    font-weight: bold;
 }
 
-/* ID Selector */
+/* Feature Section ID */
 #featured {
     border: 2px solid #003366;
     padding: 20px;
-    margin-top: 25px;
     background: #eef4fa;
+    margin-top: 25px;
 }
 
+/* ====================================================
+   CUSTOM GRID LAYOUT (VOCAL HEALTH PAGE)
+   ==================================================== */
 .grid-layout {
     display: grid;
     grid-template-columns: auto auto;
-    gap: 2rem;
+    gap: 1.5rem;
     border: 1px solid black;
-  	padding: 10px;
-    
+    padding: 10px;
+}
+
 .grid-layout .full-width {
     grid-column: 1 / span 2;
+    font-weight: bold;
+}
+
+/* ====================================================
+   TABLE STYLING (Classes Table — LAB 9)
+   ==================================================== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+thead {
+    background-color: #003366;
+    color: white;
+}
+
+th, td {
+    border: 1px solid #333;
+    padding: 10px;
+    text-align: left;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #eef4fa;
+}
+
+/* ====================================================
+   FLEX + GRID (LAB 11)
+   ==================================================== */
+.leader-grid,
+.workshop-grid,
+.levels-grid {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.leader-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.workshop-grid,
+.levels-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.leader-card,
+.workshop-card,
+.level-card {
+    background: #eef4fa;
+    border: 1px solid #003366;
+    padding: 20px;
+    border-radius: 5px;
 }
 
 /* ====================================================
@@ -138,76 +189,51 @@ h2 {
    ==================================================== */
 button {
     background-color: #0056b3;
-    color: #ffffff;
+    color: white;
     border: none;
     padding: 10px 18px;
-    cursor: pointer;
     border-radius: 5px;
-    transition: background 0.3s ease;
+    cursor: pointer;
 }
 
 button:hover {
     background-color: #003366;
-        opacity: 0.65;
+    opacity: 0.7;
 }
 
 /* ====================================================
-   FOOTER STYLES
+   FOOTER
    ==================================================== */
 footer {
     background-color: #003366;
-    color: #ffffff;
+    color: white;
     text-align: center;
     padding: 18px;
-    margin-top: 30px;
-    font-size: 0.9em;
+    margin-top: 20px;
 }
 
-/* ============================
-   TABLET VIEWPORT (min 768px)
-   ============================ */
+/* ====================================================
+   MEDIA QUERIES (LAB 10)
+   ==================================================== */
+
+/* Tablet */
 @media screen and (min-width: 768px) {
-
-    /* Show tablet/desktop elements */
-    .tablet-desktop-only {
-        display: block;
-    }
-
-    /* Hide mobile content */
-    .mobile-only {
-        display: none;
-    }
-
-    /* Two-column layout example */
-    .two-column {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 1.5rem;
-    }
-
-    /* Slight spacing adjustments for wider screens */
     main {
         padding: 2rem;
     }
 }
 
-/* ============================
-   DESKTOP VIEWPORT (min 1024px)
-   ============================ */
+/* Desktop */
 @media screen and (min-width: 1024px) {
-
-    /* Apply a gradient background */
     body {
         background: linear-gradient(to bottom right, #ffffff, #ffeb3b);
     }
 
-    /* Hover pseudo-class (dynamic pseudo-class requirement) */
-    nav a:hover {
-        color: #5533cc;
+    nav .nav-links a:hover {
+        color: #ffdd55;
         text-decoration: underline;
     }
 
-    /* More refined two-column layout */
     .content-wrapper {
         display: grid;
         grid-template-columns: 2fr 1fr;
@@ -215,44 +241,38 @@ footer {
     }
 }
 
-/* ============================
-   LARGE DESKTOP (min 1440px)
-   ============================ */
+/* Large Desktop */
 @media screen and (min-width: 1440px) {
-
-    /* Keep content from appearing too stretched */
     .site-container {
         max-width: 1400px;
         margin: 0 auto;
         padding: 2rem;
     }
 
-    /* Increase font sizes for readability */
     body {
-        font-size: 1.1rem;
+        font-size: 1.15rem;
     }
 }
 
-/* ============================
-   PRINT STYLES
-   ============================ */
+/* ====================================================
+   PRINT STYLES (LAB 12)
+   ==================================================== */
 @media print {
-
-    /* Remove backgrounds for printer-friendly layout */
     body {
         background: white !important;
+        color: black;
     }
 
-    /* Hide anything unnecessary for printing */
-    nav, footer, .mobile-only {
+    nav, footer {
         display: none;
     }
 
-    /* Ensure text prints clearly */
     main {
         padding: 0;
-        color: black;
     }
-}
 
+    a {
+        color: black;
+        text-decoration: underline;
+    }
 }
